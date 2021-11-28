@@ -9,9 +9,15 @@
 </head>
 <body>
 
+  <!--The container that holds the entire app-->
+
  <main class="main grid">
 
+  <!--The first section: -> header: title + darkmode par-->
+
   <section class="header grid">
+
+      <!--The title-->
 
     <div class="title">
       <div class="dash-title">
@@ -23,12 +29,29 @@
       </div>
     </div>
 
+    <!--The darkmode container-->
+
     <div class="mode flex">
-      <span class="text-grayish fs-300">Dark Mode</span>
+      <span class="text-grayish fs-300 span">Dark Mode</span>
+      <div class="darkmode-container">
+      <input type="checkbox" id="darkmode" style="display: none;">
+      <label for="darkmode" class="switch">
+        <div class="toggleSwitch">
+
+        </div>
+      </label>
+
+      </div>
     </div>
   </section>
 
+
+  <!--The dashboard container-->
+
 <section class="dashboard-container">
+
+   <!--The platforms-->
+
 
 <div class="platforms grid">
 
@@ -112,13 +135,20 @@
 
 </div>
 
-<h2 class="text-grayish">Overview - Today</h2>
-<div class="interactions grid" style="flex-direction: column;">
 
- 
+
+   <!--The overview title-->
+
+<h2 class="text-grayish" style="padding: 1rem 0;">Overview - Today</h2>
+
 
 
 <!--followers-views cards container-->
+
+
+<div class="interactions grid" style="flex-direction: column;">
+
+
 
 <!--page views on FB-->
 <div class="interaction grid">

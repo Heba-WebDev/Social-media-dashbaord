@@ -196,12 +196,13 @@ select {
     color: var(--Bright-Red);
 }
 .light-cards {background-color: var(--Light-grayish-blue-card);};
-.dark-cards {background-color: var(--Desaturated-blue-card);};
+
 .dark-bg {background-color: var(--dark-blue-bg);};
 .dark-bg-top {background-color: var(--dark-blue-top-bg);};
 .bg-white {background-color: var(--white-txt);};
 .bg-pale-blue {background-color: var(--Pale-blue-bg);};
-.light-card {background-color: var(--Light-grayish-blue-card);};
+
+
 
 /* typography */
 
@@ -238,6 +239,10 @@ body {
     color: var(--Very-dark-blue-txt);
 }
 
+.darkmode {
+    background-color: hsl(232, 19%, 15%);
+    color: var(--white-txt);
+}
 
 .main {
     padding: 1.5rem 1rem;
@@ -268,9 +273,49 @@ padding-bottom: 1.2rem;
     padding-bottom: 0.3rem;
 }
 
-/* .mode {
- justify-content: space-around;           
-} */
+
+#darkmode {
+    display: none;
+}
+
+
+.mode {
+ justify-content: space-between;           
+} 
+
+
+
+.switch {
+    
+    right: 1.1em;
+    width: 4.2em;
+    height: 2.1em;
+    border-radius: 10em;
+    background-color: var(--toggle-ligh);
+    position: absolute;
+    cursor: pointer;
+   
+}
+
+.toggleSwitch {
+    width: 1.6em;
+    height: 1.6em;
+    background-color: var(--white-txt);
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+   border-radius: 10em;
+   transform: var(--toggle-dark);
+}
+
+
+
+#darkmode:checked ~ label .toggleSwitch {
+ transform: translateX(2em);
+}
+
 
 @media (min-width: 45rem) {
     .title {
@@ -281,12 +326,46 @@ padding-bottom: 1.2rem;
         }
 
         .mode {
-            justify-content: end;
-           text-align: right;
+            display: grid;
+            justify-content: center;
+           text-align: center;
+           gap: 0;
         }
 
         .mode > * {
             width: 100%;
+     
+        }
+
+        .mode > span {
+           justify-self: start;
+            align-self: flex-start;
+           
+        }
+
+        .switch {
+            top: 1.4em;
+            right: 9rem;
+            width: 4.2em;
+            height: 2.1em;
+            border-radius: 10em;
+            background-color: var(--toggle-ligh);
+            position: absolute;
+            cursor: pointer;
+           
+        }
+        
+        .toggleSwitch {
+            width: 1.6em;
+            height: 1.6em;
+            background-color: var(--white-txt);
+            position: absolute;
+            top: 0.2em;
+            left: 0.2em;
+            cursor: pointer;
+            transition: all 250ms ease-in-out;
+           border-radius: 10em;
+           transform: var(--toggle-dark);
         }
     }
 
@@ -300,8 +379,11 @@ padding-bottom: 1.2rem;
         grid-template-columns: repeat(4, 1fr);
     }    
 }
+
+
+
 .platform-card {
-    background-color: var(--Light-grayish-blue-card);
+    background-color: hsl(227, 47%, 96%);
     justify-content: center;
     padding: 1.3rem 0;
     width: 100%;
@@ -353,4 +435,9 @@ padding-bottom: 1.2rem;
 .interactions {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+}
+
+
+.dark-cards {
+    background-color: hsl(228, 28%, 20%);
 }
